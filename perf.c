@@ -16,7 +16,7 @@ void perf_init(perf_t *perf)
   perf->cnt = 0;
   perf->cnt_int = 0;
 
-  perf->time_start = htim5.Instance->CNT;
+  //perf->time_start = htim5.Instance->CNT;
 
   perf->time_diff = 0;
   perf->time_min = 0;
@@ -29,7 +29,7 @@ void perf_init(perf_t *perf)
 //------------------------------------------------------------------------------
 void perf_start(perf_t *perf)
 {
-  perf->time_start = htim5.Instance->CNT;
+  //perf->time_start = htim5.Instance->CNT;
   perf->cnt++;
 }
 //------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ void perf_end_start(perf_t *perf)
 //------------------------------------------------------------------------------
 void perf_end(perf_t *perf)
 {
-  perf->time_diff = htim5.Instance->CNT - perf->time_start;
+  //perf->time_diff = htim5.Instance->CNT - perf->time_start;
 
   if(perf->time_diff < perf->time_min) perf->time_min = perf->time_diff;
   if(perf->time_diff > perf->time_max) perf->time_max = perf->time_diff;
